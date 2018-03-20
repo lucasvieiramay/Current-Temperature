@@ -1,0 +1,36 @@
+
+    <head>
+        <!-- Material Design Lite CSS -->
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+        <!-- Material Design Lite Font Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+
+
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Country Code</th>
+                    <th>Unit of Measurement</th>
+                    <th>Searched At</th>
+                    <th>Temperature</th>
+                    <th>Cordenates</th>
+                    <th>Zip Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let log of logs">
+                    <td>{{log.city}}</td>
+                    <td>{{log.country_code}}</td>
+                    <td>{{log.unit_of_measurement}}</td>
+                    <td>{{log.searched_at}}</td>
+                    <td>{{log.temperature}}</td>
+                    <td>{{log.cordenates}}</td>
+                    <td>{{log.zip_code}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Material Design Lite JavaScript -->
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-md-6">
+        <form (submit)="searchTemperature(address.value)" class="form">
+            <input type="text" class="form__field" placeholder="Enter the address, city, neighborhood or zip code..." #address required>
+            <input type="submit" value="Check" class="btn btn--primary btn--inside uppercase">
+        </form>
+    </div>
+    <div *ngIf="initialized">
+        <!-- Rainning -->
+        <div *ngIf="rainnyDay && (isDay)" class="weather-wrapper">
+            <div class="weather-card madrid">
+                <div class="weather-icon sun"></div>
+                <h1>{{actualTemperature}}°</h1>
+                <span>Max: {{maxTemperature}}°</span>
+                <span style="margin-left: 140px;">Min: {{minTemperature}}°</span>
+                <p>{{city}}</p>
+            </div>
+        </div>
+        <div *ngIf="rainnyDay && !(isDay)" class="weather-wrapper">
+            <div class="weather-card-night">
+                <div class="weather-icon cloud"></div>
+                <h1>{{actualTemperature}}</h1>
+                <span>Max: {{maxTemperature}}</span>
+                <span style="margin-left: 140px;">Min: {{minTemperature}}</span>
+                <p>{{city}}</p>
+            </div>
+        </div>
+        <!-- Sun -->
+        <div *ngIf="!rainnyDay && (isDay)" class="weather-wrapper">
+            <div class="weather-card madrid">
+                <div class="weather-icon sun"></div>
+                <h1>{{actualTemperature}}°</h1>
+                <span>Max: {{maxTemperature}}°</span>
+                <span style="margin-left: 140px;">Min: {{minTemperature}}°</span>
+                <p>{{city}}</p>
+            </div>
+        </div>
+        <div *ngIf="!rainnyDay && !(isDay)" class="weather-wrapper">
+            <div class="weather-card-night">
+                <div class="weather-icon cloud"></div>
+                <h1>{{actualTemperature}}°</h1>
+                <span>Max: {{maxTemperature}}°</span>
+                <span style="margin-left: 140px;">Min: {{minTemperature}}°</span>
+                <p>{{city}}</p>
+            </div>
+        </div>
+    </div>
+</div>
